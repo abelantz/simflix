@@ -1,9 +1,11 @@
 <template>
-  <div>
-      <carousel-3d class="carousel">
-          <slide v-for="(video, i) in videos" :index="i" :key="i">
-            <template class="tmp" slot-scope="{index, isCurrent, leftIndex, rightIndex}">
-               <img class="img" :data-index="index" :class="{ current: isCurrent, onLeft: (leftIndex >= 0), onRight: (rightIndex >= 0) }" :src="video.poster">
+  <div class="container">
+      <carousel-3d class="carousel" style="height: 600px">
+          <slide v-for="(video, i) in videos" :index="i" :key="i" class="slide">
+            <template slot-scope="{index, isCurrent, leftIndex, rightIndex}">
+                <router-link :to="'/video/' + video.title"> 
+                    <img class="img" :data-index="index" :class="{ current: isCurrent, onLeft: (leftIndex >= 1), onRight: (rightIndex >= 1) }" :src="video.poster">
+                </router-link>
             </template>
           </slide>
       </carousel-3d>
@@ -17,13 +19,15 @@ import axios from 'axios';
 
 
 export default {
+    name: 'home',
+
+    mounted(){
+        console.log('mounted home')
+        this.fetchVideos();
+    },
     components:{
         Carousel3d,
         Slide
-    },
-    mounted(){
-        console.log('mounted')
-        this.fetchVideos();
     },
     data(){
         return{
@@ -44,8 +48,12 @@ export default {
 
 <style scoped>
 
-    .img{
-        height: 600px !important
+    .slide {
+        height: 540px !important; 
+        border: 0;
+        -webkit-box-shadow: 0px 15px 30px 2px rgba(107, 107, 107, 0.5);
+        -moz-box-shadow: 0px 15px 30px 2px rgba(107, 107, 107, 0.5);
+        box-shadow: 0px 15px 30px 2px rgba(107, 107, 107, 0.5);
     }
 
 </style>
