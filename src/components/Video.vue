@@ -3,10 +3,10 @@
     <div class="container">
         <h2 class="title" >{{video[0].title}}</h2>
             <div class="player">
-                <vue-core-video-player id="videoElement" @canplay="updatePaused" @playing="updatePaused" @pause="updatePaused" controls :src="video[0].video" ></vue-core-video-player>
+                <vue-core-video-player id="videoElement" @canplay="updatePaused" @playing="updatePaused" @pause="updatePaused" controls :src="video[0].video" > </vue-core-video-player>
                 <div class="controls">
-                    <button v-show="paused" @click="play">&#9654;</button>
-                    <button v-show="playing" @click="pause">&#9208;</button>
+                    <button class="playbtn" v-show="paused" @click="play" >  PLAY </button>
+                    <button class="pausebtn" v-show="playing" @click="pause">PAUSE</button>
                 </div>
             </div>
         
@@ -45,6 +45,21 @@ export default {
 }
 </script>
 <style>
+    .playbtn{
+        background: url(http://hybridtv.ss7.tv/techtest/assets/icons/btn-play.png);
+        width:50px;
+        height: 50px;
+    }
+    .pausebtn{
+        background: url(http://hybridtv.ss7.tv/techtest/assets/icons/btn-pause.png);
+        width:50px;
+        height: 50px;
+    }
+    .controls{
+        text-align: center;
+        padding: 10px
+    }
+    
     .player{
         width: 900px;
         margin: auto;
