@@ -6,12 +6,12 @@
 npm install
 ```
 
+```
+npm install video.js vue-carousel-3d vuex axios vue-core-video-player vue-router
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
