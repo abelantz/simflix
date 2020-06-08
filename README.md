@@ -1,5 +1,5 @@
-# simple-video
-<img src="simflix.jpg" />
+# SIMFLIX
+<img src="simflix.jpg"/>
 
 ## Project setup
 ```
