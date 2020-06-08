@@ -1,41 +1,45 @@
 <template>
-    <div>
-        <div v-for="video in videoId" :key="video.poster">
-            {{video.video}}
-        </div>
+    <div class="container">
+            <videoPlayer class="video-player-box"
+                 ref="videoPlayer"
+                 :options="playerOptions"
+            />
+
     </div>
 </template>
-
 <script>
-import axios from 'axios';
-
+import 'video.js/dist/video-js.css'
+import { videoPlayer } from 'vue-video-player'
 export default {
-    props: ['id'],
+    props: ['vId'],
+    name:'Video',
+    components: {
+        videoPlayer
+    },
     data(){
-        return{
-            videos:[]
+        return {
+            playerOptions:{
+                sources:[{
+                    src: this.video.video
+                }],
+                poster: this.video.poster,
+                width: '1600px',
+                margin: '40px'
+            }
         }
     },
-    mounted(){
-        this.videoId();
-    },
-    methods: {
-       fetchVideo(){
-            axios.get('http://hybridtv.ss7.tv/techtest/movies.json')
-                .then(response => {
-                    console.log(response.data.data);
-                    this.videos = response.data.data
-                })
-        },
-        videoId() {
-            return this.videos.find((video => {
-                return video.poster === this.id;
-            }))
+    computed:{
+        video(){
+            return this.$store.state.videos.filter(video => {
+                return video.title === this.vId
+            })
         }
-    }
+    },
 }
 </script>
-
 <style>
-
+    .container{
+        width: 100%;
+        height: 100vh;
+    }
 </style>

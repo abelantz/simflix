@@ -8,11 +8,11 @@ const routes = [
         component: Home
     },
     {
-        path: '/video/:id',
+        path: '/video/:vId',
         name: 'video',
         component: Video,
         props: true
-    }
+    },
 ]
 
 export default routes
