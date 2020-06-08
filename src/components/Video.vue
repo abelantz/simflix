@@ -1,5 +1,4 @@
 <template>
-
     <div class="container">
         <h2 class="title" >{{video[0].title}}</h2>
             <div class="player">
@@ -9,7 +8,6 @@
                     <button class="pausebtn" v-show="playing" @click="pause">PAUSE</button>
                 </div>
             </div>
-        
     </div>
 </template>
 <script>
@@ -67,7 +65,6 @@ export default {
         text-align: center;
         padding: 10px
     }
-    
     .player{
         width: 900px;
         margin: auto;
