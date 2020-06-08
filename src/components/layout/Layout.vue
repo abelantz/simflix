@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    
+
 }
 </script>
 
@@ -40,11 +40,11 @@ export default {
         justify-content: center;
         background: #ffffff;
         border-bottom: 1px solid lightgray;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         
     }
     .nav a{
-        color: #636b6f;
+        color: #ca250f;
         padding: 0 25px;
         font-size: 24px;
         font-weight: 600;

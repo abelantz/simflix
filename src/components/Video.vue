@@ -1,5 +1,7 @@
 <template>
+
     <div class="container">
+        <h2 class="title" >{{video[0].title}}</h2>
             <videoPlayer class="video-player-box"
                  ref="videoPlayer"
                  :options="playerOptions"
@@ -20,11 +22,11 @@ export default {
         return {
             playerOptions:{
                 sources:[{
-                    src: this.video.video
+                    src: ''
                 }],
-                poster: this.video.poster,
-                width: '1600px',
-                margin: '40px'
+                poster: '',
+                height: '600px',
+                
             }
         }
     },
@@ -38,8 +40,12 @@ export default {
 }
 </script>
 <style>
-    .container{
-        width: 100%;
-        height: 100vh;
+    .title{
+        text-align: center;
+        color: black
+    }
+    .video-player-box{
+        margin: auto !important;
+        padding-left:13% 
     }
 </style>

@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style scoped>
-
     .slide {
         height: 540px !important; 
         border: 0;
