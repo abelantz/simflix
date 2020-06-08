@@ -5,7 +5,11 @@ import Layout from './components/layout/Layout.vue'
 import Carousel3d from 'vue-carousel-3d';
 import Vuex from 'vuex';
 import axios from "axios";
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
 Vue.config.productionTip = false
+
+Vue.use(VueCoreVideoPlayer)
 Vue.use(VueRouter);
 Vue.use(Carousel3d);
 Vue.use(Vuex);

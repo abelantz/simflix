@@ -2,32 +2,23 @@
 
     <div class="container">
         <h2 class="title" >{{video[0].title}}</h2>
-            <videoPlayer class="video-player-box"
-                 ref="videoPlayer"
-                 :options="playerOptions"
-            />
-
+            <div class="player">
+                <vue-core-video-player controls :src="video[0].video" ></vue-core-video-player>
+            </div>
+        <div class="controls">
+            <button v-show="paused" @click="play" >&#9654;</button>
+            <button v-show="playing" @click="pause">&#9208;</button>
+        </div>
     </div>
 </template>
 <script>
-import 'video.js/dist/video-js.css'
-import { videoPlayer } from 'vue-video-player'
 export default {
     props: ['vId'],
     name:'Video',
-    components: {
-        videoPlayer
-    },
     data(){
         return {
-            playerOptions:{
-                sources:[{
-                    src: ''
-                }],
-                poster: '',
-                height: '600px',
-                
-            }
+            videoElement: null,
+            paused: null
         }
     },
     computed:{
@@ -35,11 +26,17 @@ export default {
             return this.$store.state.videos.filter(video => {
                 return video.title === this.vId
             })
-        }
+        },
     },
 }
 </script>
 <style>
+    .player{
+        width: 900px;
+        margin: auto;
+        justify-content: center
+        
+    }
     .title{
         text-align: center;
         color: black
