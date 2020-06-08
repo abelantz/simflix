@@ -16,7 +16,6 @@
 
 import {Carousel3d, Slide} from 'vue-carousel-3d';
 
-
 export default {
     name: 'home',
     components:{
