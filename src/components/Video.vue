@@ -5,7 +5,7 @@
             <div class="player">
                 <vue-core-video-player id="videoElement" @canplay="updatePaused" @playing="updatePaused" @pause="updatePaused" controls :src="video[0].video" > </vue-core-video-player>
                 <div class="controls">
-                    <button class="playbtn" v-show="paused" @click="play" >  PLAY </button>
+                    <button  class="playbtn" v-show="paused" @click="play"> PLAY</button>
                     <button class="pausebtn" v-show="playing" @click="pause">PAUSE</button>
                 </div>
             </div>
@@ -49,11 +49,19 @@ export default {
         background: url(http://hybridtv.ss7.tv/techtest/assets/icons/btn-play.png);
         width:50px;
         height: 50px;
+        color:black;
+        background-color: white;
+        border:1px solid #ccc;
+        border-radius: 30px
     }
     .pausebtn{
         background: url(http://hybridtv.ss7.tv/techtest/assets/icons/btn-pause.png);
         width:50px;
         height: 50px;
+        color:black;
+        background-color: white;
+        border:1px solid #ccc;
+        border-radius: 30px
     }
     .controls{
         text-align: center;
