@@ -1,6 +1,6 @@
 <template>
   <div >
-      <carousel-3d class="carousel" style="height: 600px">
+      <carousel-3d class="carousel" style="width:100%; height:600px" :controls-visible="true" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="60" >
           <slide v-for="(video, i) in videos" :index="i" :key="i" class="slide">
             <template slot-scope="{index, isCurrent, leftIndex, rightIndex}">
                 <router-link :to="'/video/' + video.title"> 
@@ -23,11 +23,11 @@ export default {
         Carousel3d,
         Slide
     },
-    computed: {
+    computed:{
         videos(){
             return this.$store.state.videos;
         }
-    }
+    },
 }
 </script>
 
